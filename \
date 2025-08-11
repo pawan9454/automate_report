@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Target path where you want to create the folders
+target_path="/opt/data/projects"
+
+# Main folder name under target path
+main_folder="MainDirectory"
+
+# Full path
+full_path="$target_path/$main_folder"
+
+# List of subfolders
+subfolders=("Sub1" "Sub2" "Sub3" "Logs" "Backup")
+
+# Create the main folder
+mkdir -p "$full_path"
+
+# Create subfolders inside main folder
+for folder in "${subfolders[@]}"; do
+    mkdir -p "$full_path/$folder"
+done
+
+# Confirmation
+echo "Folders created under $full_path:"
+ls -l "$full_path"
